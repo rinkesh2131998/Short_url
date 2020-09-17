@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+      <head>
+
+          <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+
+    <style>
+
+    body {
+      font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      text-align: center;
+        padding: 40px 0;
+        background: #EBF0F5;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        color: #88B04B;
+
+      font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-weight: 900;
+          font-size: 40px;
+          margin-bottom: 10px;
+    }
+
+
+
+    header.masthead .overlay {
+      position: absolute;
+
+      height: 100%;
+      width: 100%;
+      top: 0;
+      left: 0;
+
+    }
+
+    header.masthead h1 {
+      font-size: 2rem;
+    }
+
+    @media (min-width: 768px) {
+      header.masthead {
+        padding-top: 12rem;
+        padding-bottom: 12rem;
+      }
+      header.masthead h1 {
+        font-size: 3rem;
+      }
+
+      .row{
+          background: white;
+          padding: 60px;
+          border-radius: 4px;
+          box-shadow: 0 2px 3px #C8D0D8;
+          display: inline-block;
+          margin: 0 auto;
+
+
+      }
+
+    i {
+      color: #9ABC66;
+      font-size: 100px;
+      line-height: 200px;
+      margin-left:-15px;
+    }
+    .card {
+      background: white;
+      padding: 60px;
+      border-radius: 4px;
+      box-shadow: 0 2px 3px #C8D0D8;
+      display: inline-block;
+      margin: 0 auto;
+    }
+
+    #url{
+        width: 50%;
+        padding: 1em;
+        border-radius: 5px;
+        text-align: center;
+        border: 1px solid grey;
+    }
+
+    #submit_button{
+
+        padding: 1em;
+        margin: 1em;
+        border-radius: 5px;
+        color: white;
+        background-color:dodgerblue;
+        border-style: none;
+    }
+    </style>
+
+      </head>
+      <body>
+         <!-- Main jumbotron for a primary marketing message or call to action -->
+          <header class="masthead text-white text-center">
+         <div class="overlay">
+            <div class="container">
+               <br />
+               {% if not short_url %}
+               <div class="row">
+                   <div class="col-xl-9 mx-auto">
+                     <h1 class="mb-5">Shrink your Url</h1>
+                   </div>
+                   <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
+                     <form method="post" class="navbar-form navbar-right" action="">
+                        <div class="form-group">
+                            <div class="col-12 col-md-9 mb-2 mb-md-0">
+                           <input type="text" id="url" name="url" class="form-control input-lg chat-input" placeholder="URL" />
+                       </div>
+                            <div class="col-12 col-md-3">
+                           <button type="submit" class="btn btn-lg btn-info" id="submit_button">Shrink! </button>
+                       </div>
+                        </div>
+                     </form>
+                  </div>
+               </div>
+               {% else %}
+
+               <div class="card">
+                  <div style="border-radius:200px; height:200px; width:200px; background: #F8FAF5; margin:0 auto;">
+                    <i class="checkmark">✓</i>
+                  </div>
+                    <h1>Success</h1>
+                    <p>Your Shrinked Url is: <a href="{{short_url}}"> {{short_url}}</a></p>
+                  </div>
+               {% endif %}
+            </div>
+         </div>
+         </div>
+     </header>
+      </body>
+   </html>
